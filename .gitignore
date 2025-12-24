@@ -1,0 +1,23 @@
+# 模型权重
+weights/*.pth
+weights/*.pt
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# 环境
+.env
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# 临时文件
+*.log
+.DS_Store

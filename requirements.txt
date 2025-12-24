@@ -1,0 +1,7 @@
+groundingdino
+openai
+opencv-python
+torch
+torchvision
+Pillow
+transformers
