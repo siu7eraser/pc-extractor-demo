@@ -1,6 +1,16 @@
 # Changelog
 
-## [0.2.0] - 2025-12-24
+
+## [0.3.0] - 2025-12-25
+
+### Added
+- Created modern React Frontend with Vite and TypeScript
+- Implemented file drag-and-drop upload
+- Added chat interface for interactive segmentation
+- Styled with responsive, glassmorphism dark theme
+- Integrated API client for backend communication
+
+
 
 ### Added
 - 集成 DeepSeek 大模型 API 替代 Anthropic API

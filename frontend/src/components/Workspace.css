@@ -1,0 +1,58 @@
+.workspace {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: var(--surface-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+}
+
+.workspace-header {
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.back-button {
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+}
+
+.back-button:hover {
+    color: var(--text-primary);
+    background: var(--glass-highlight);
+    border-color: transparent;
+}
+
+.workspace-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .workspace-content {
+        flex-direction: column;
+    }
+
+    .image-display {
+        height: 40vh;
+        flex: none;
+    }
+
+    .chat-interface {
+        flex: 1;
+        border-left: none;
+        border-top: 1px solid var(--glass-border);
+    }
+}
