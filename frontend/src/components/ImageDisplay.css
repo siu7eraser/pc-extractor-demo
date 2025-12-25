@@ -1,0 +1,76 @@
+.image-display {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.image-wrapper {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.original-layer {
+    display: block;
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.result-layer-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Assuming the result is a transparent PNG of the segmented object, we just overlay it.
+     If it's an opaque mask, we might need opacity. 
+     Based on docs, it returns the segmented object, presumably transparent background? 
+     Wait, the docs say "result_Image". Usually segmentation returns the mask or the object. 
+     If it's the object cut out, overlaying it on top of the original (which is identical) won't show much change 
+     UNLESS we hide the original or dim it.
+     
+     Let's try a "Reveal" effect. We dim the original and show the result bright on top.
+  */
+    animation: fadeIn 0.5s ease-out;
+    pointer-events: none;
+}
+
+.result-layer {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Dim the original when result is present to highlight the segmentation */
+.image-wrapper:has(.result-layer) .original-layer {
+    filter: brightness(0.4) grayscale(0.2);
+    transition: filter 0.5s ease;
+}
+
+.image-controls {
+    position: absolute;
+    bottom: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--glass-border);
+}
+
+.badge {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

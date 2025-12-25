@@ -11,8 +11,17 @@
 ## 安装
 
 ```bash
+```bash
 pip install -r requirements.txt
 ```
+
+### 前端安装
+
+```bash
+cd frontend
+npm install
+```
+
 
 ## 配置
 
@@ -25,7 +34,23 @@ $env:ANTHROPIC_API_KEY="your-deepseek-api-key"
 ## 使用
 
 ```bash
-python agent.py
+### 启动后端 API
+
+```bash
+python server.py
+```
+
+### 启动前端应用
+
+```bash
+cd frontend
+npm run dev
+```
+
+访问 `http://localhost:5174` (端口可能随 Vite 在终端的输出而变化) 使用 Web 界面。
+
+### 命令行模式
+
 ```
 
 示例对话：
