@@ -39,19 +39,53 @@
     overflow: hidden;
 }
 
+.workspace-panel {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.workspace-panel > * {
+    flex: 1;
+    width: 100%;
+}
+
+.resizer {
+    width: 6px;
+    background: var(--glass-border);
+    cursor: col-resize;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.resizer:hover {
+    background: var(--primary-color);
+}
+
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
     .workspace-content {
         flex-direction: column;
     }
 
-    .image-display {
+    .workspace-panel {
+        width: 100% !important;
+    }
+
+    .workspace-panel:first-child {
         height: 40vh;
         flex: none;
     }
 
-    .chat-interface {
+    .workspace-panel:last-child {
         flex: 1;
+    }
+
+    .resizer {
+        display: none;
+    }
+
+    .chat-interface {
         border-left: none;
         border-top: 1px solid var(--glass-border);
     }

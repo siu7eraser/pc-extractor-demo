@@ -1,6 +1,11 @@
 # 模型权重
 weights/*.pth
 weights/*.pt
+weights/hf_cache/
+
+# 上传的图片和结果
+uploads/
+results/
 
 # Python
 __pycache__/
@@ -21,3 +26,9 @@ venv/
 # 临时文件
 *.log
 .DS_Store
+
+# Node
+node_modules/
+
+# 实验目录
+exp/
